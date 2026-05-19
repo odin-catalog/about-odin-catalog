@@ -546,83 +546,36 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 12px;
     }
+    .lineage-node { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 10px; margin: 6px 0; border: 1px solid; }
+    .lineage-node .node-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .lineage-edge { margin-left: 28px; padding: 3px 0; color: var(--subtle); display: flex; align-items: center; gap: 6px; }
+    .lineage-edge::before { content: '↓'; color: var(--indigo-lt); }
+    .depth-1 { margin-left: 0; }
+    .depth-2 { margin-left: 20px; }
+    .depth-3 { margin-left: 40px; }
+    .depth-4 { margin-left: 60px; }
+    .ln-blue { background: rgba(59,130,246,0.08); border-color: rgba(59,130,246,0.25); color: #93c5fd; }
+    .ln-green { background: rgba(16,185,129,0.08); border-color: rgba(16,185,129,0.25); color: #6ee7b7; }
+    .ln-violet { background: rgba(167,139,250,0.08); border-color: rgba(167,139,250,0.25); color: #c4b5fd; }
+    .ln-cyan { background: rgba(34,211,238,0.08); border-color: rgba(34,211,238,0.25); color: #67e8f9; }
+    .ln-amber { background: rgba(245,158,11,0.08); border-color: rgba(245,158,11,0.25); color: #fcd34d; }
 
-    .lineage-node {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border-radius: 10px;
-      margin: 6px 0;
-      border: 1px solid;
-    }
+    .fibo-panel { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+    .fibo-header { background: rgba(99,102,241,0.08); border-bottom: 1px solid var(--border); padding: 14px 20px; font-size: 12px; font-weight: 600; color: var(--indigo-lt); letter-spacing: 0.5px; }
+    .fibo-row { display: grid; grid-template-columns: 1fr 120px 1fr; gap: 0; border-bottom: 1px solid var(--border); }
+    .fibo-row:last-child { border-bottom: none; }
+    .fibo-cell { padding: 12px 20px; font-size: 12px; display: flex; align-items: center; }
+    .fibo-cell.label { color: var(--muted); font-family: 'JetBrains Mono', monospace; }
+    .fibo-cell.match { justify-content: center; }
+    .match-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; padding: 3px 8px; border-radius: 5px; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); color: #6ee7b7; }
+    .fibo-concept { color: #93c5fd; font-family: 'JetBrains Mono', monospace; font-size: 11px; word-break: break-all; }
 
-    .lineage-node .node-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    .lineage-edge {
-      margin-left: 28px;
-      padding: 3px 0;
-      color: var(--subtle);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .lineage-edge::before {
-      content: '↓';
-      color: var(--indigo-lt);
-    }
-
-    .depth-1 {
-      margin-left: 0;
-    }
-
-    .depth-2 {
-      margin-left: 20px;
-    }
-
-    .depth-3 {
-      margin-left: 40px;
-    }
-
-    .depth-4 {
-      margin-left: 60px;
-    }
-
-    .ln-blue {
-      background: rgba(59, 130, 246, 0.08);
-      border-color: rgba(59, 130, 246, 0.25);
-      color: #93c5fd;
-    }
-
-    .ln-green {
-      background: rgba(16, 185, 129, 0.08);
-      border-color: rgba(16, 185, 129, 0.25);
-      color: #6ee7b7;
-    }
-
-    .ln-violet {
-      background: rgba(167, 139, 250, 0.08);
-      border-color: rgba(167, 139, 250, 0.25);
-      color: #c4b5fd;
-    }
-
-    .ln-cyan {
-      background: rgba(34, 211, 238, 0.08);
-      border-color: rgba(34, 211, 238, 0.25);
-      color: #67e8f9;
-    }
-
-    .ln-amber {
-      background: rgba(245, 158, 11, 0.08);
-      border-color: rgba(245, 158, 11, 0.25);
-      color: #fcd34d;
-    }
+    /* ── Architecture ─────────────────────────────────────── */
+    .arch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 48px; }
+    .arch-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; padding: 20px 18px; }
+    .arch-card h4 { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+    .arch-card p { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .arch-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--subtle); margin-bottom: 16px; }
 
     /* ── Use case ─────────────────────────────────────────── */
     #usecase {
@@ -681,104 +634,6 @@
       line-height: 1.6;
     }
 
-    .fibo-panel {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-    }
-
-    .fibo-header {
-      background: rgba(99, 102, 241, 0.08);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 20px;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--indigo-lt);
-      letter-spacing: 0.5px;
-    }
-
-    .fibo-row {
-      display: grid;
-      grid-template-columns: 1fr 120px 1fr;
-      gap: 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .fibo-row:last-child {
-      border-bottom: none;
-    }
-
-    .fibo-cell {
-      padding: 12px 20px;
-      font-size: 12px;
-      display: flex;
-      align-items: center;
-    }
-
-    .fibo-cell.label {
-      color: var(--muted);
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    .fibo-cell.match {
-      justify-content: center;
-    }
-
-    .match-pill {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 5px;
-      background: rgba(16, 185, 129, 0.12);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      color: #6ee7b7;
-    }
-
-    .fibo-concept {
-      color: #93c5fd;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      word-break: break-all;
-    }
-
-    /* ── Architecture ─────────────────────────────────────── */
-    .arch-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
-      margin-top: 48px;
-    }
-
-    .arch-card {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px 18px;
-    }
-
-    .arch-card h4 {
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .arch-card p {
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    .arch-label {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--subtle);
-      margin-bottom: 16px;
-    }
 
     /* ── Alpha ────────────────────────────────────────────── */
     #alpha {
@@ -805,53 +660,6 @@
       margin-bottom: 32px;
       font-size: 13px;
       color: #fcd34d;
-    }
-
-    .email-form {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 8px;
-    }
-
-    .email-input {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border2);
-      border-radius: 10px;
-      padding: 13px 18px;
-      font-size: 14px;
-      color: var(--text);
-      font-family: inherit;
-      width: 280px;
-      outline: none;
-      transition: border-color 0.15s;
-    }
-
-    .email-input::placeholder {
-      color: var(--subtle);
-    }
-
-    .email-input:focus {
-      border-color: var(--indigo);
-    }
-
-    .email-submit {
-      background: var(--indigo);
-      color: #fff;
-      font-weight: 700;
-      font-size: 14px;
-      padding: 13px 24px;
-      border-radius: 10px;
-      border: none;
-      cursor: pointer;
-      font-family: inherit;
-      transition: background 0.15s, transform 0.1s;
-    }
-
-    .email-submit:hover {
-      background: #4f52d0;
-      transform: translateY(-1px);
     }
 
     /* ── Testimonial / quote ──────────────────────────────── */
@@ -960,14 +768,14 @@
     }
   </style>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9CLPM26RP7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9CLPM26RP7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-9CLPM26RP7');
-</script>
+    gtag('config', 'G-9CLPM26RP7');
+  </script>
 </head>
 
 <body>
@@ -985,9 +793,10 @@
         <a href="#standards">Standards</a>
         <a href="#lineage">Lineage</a>
         <a href="#usecase">Use Cases</a>
+        <a href="#vocabulary">Vocabulary & AI</a>
         <a href="#alpha">Early Access</a>
         <a href="https://docs.odin-catalog.com/">Docs</a>
-        <a href="https://github.com/odin-catalog" class="nav-cta">GitHub →</a>
+        <a href="https://github.com/odin-catalog/odin" class="nav-cta">GitHub →</a>
       </div>
     </div>
   </nav>
@@ -1024,7 +833,7 @@
         </svg>
         Request Early Access
       </a>
-      <a href="https://github.com/odin-catalog" class="btn-secondary">
+      <a href="https://github.com/odin-catalog/odin" class="btn-secondary">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
           <path
             d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
@@ -1287,16 +1096,13 @@
         </div>
 
         <div class="lineage-diagram">
-          <div
-            style="font-size:11px;color:var(--subtle);margin-bottom:16px;letter-spacing:0.5px;text-transform:uppercase">
+          <div style="font-size:11px;color:var(--subtle);margin-bottom:16px;letter-spacing:0.5px;text-transform:uppercase">
             Upstream lineage · REGULATORY_DB.BCBS239 · depth 4</div>
-
           <div class="lineage-node depth-1 ln-amber">
             <div class="node-dot" style="background:#f59e0b"></div>
             <span>REGULATORY_DB.BCBS239.RISK_AGGREGATION</span>
           </div>
           <div class="lineage-edge depth-1">3 inputs</div>
-
           <div class="lineage-node depth-2 ln-violet">
             <div class="node-dot" style="background:#a78bfa"></div>
             <span>RISK_DB.MARKET_RISK.DAILY_POSITIONS</span>
@@ -1310,7 +1116,6 @@
             <div class="node-dot" style="background:#22d3ee"></div>
             <span>kafka://prices-realtime</span>
           </div>
-
           <div class="lineage-node depth-2 ln-violet">
             <div class="node-dot" style="background:#a78bfa"></div>
             <span>RISK_DB.PNL.DAILY_ATTRIBUTION</span>
@@ -1324,7 +1129,6 @@
             <div class="node-dot" style="background:#10b981"></div>
             <span>REFDATA_DB.EQUITIES.SECURITIES_MASTER</span>
           </div>
-
           <div class="lineage-node depth-2 ln-violet">
             <div class="node-dot" style="background:#a78bfa"></div>
             <span>RISK_DB.CREDIT.COUNTERPARTY_EXPOSURE</span>
@@ -1338,9 +1142,7 @@
             <div class="node-dot" style="background:#10b981"></div>
             <span>REFDATA_DB.COUNTERPARTY.MASTER</span>
           </div>
-
-          <div
-            style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border);font-size:11px;color:var(--subtle)">
+          <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border);font-size:11px;color:var(--subtle)">
             ↑ 10 unique nodes · 8 DERIVED_FROM edges · via Apache AGE Cypher
           </div>
         </div>
@@ -1394,61 +1196,107 @@
 
         <div class="fibo-panel">
           <div class="fibo-header">FIBO Vocabulary Mappings — Trade Blotter · Logical Model v2.0</div>
-
           <div class="fibo-row" style="background:rgba(255,255,255,0.02)">
-            <div class="fibo-cell"
-              style="color:var(--subtle);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px">
-              Business Name</div>
-            <div class="fibo-cell match"
-              style="color:var(--subtle);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px">
-              Match</div>
-            <div class="fibo-cell"
-              style="color:var(--subtle);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px">
-              FIBO Concept</div>
+            <div class="fibo-cell" style="color:var(--subtle);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px">Business Name</div>
+            <div class="fibo-cell match" style="color:var(--subtle);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px">Match</div>
+            <div class="fibo-cell" style="color:var(--subtle);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px">FIBO Concept</div>
           </div>
+          <div class="fibo-row"><div class="fibo-cell label">Trade Amount</div><div class="fibo-cell match"><span class="match-pill">exact</span></div><div class="fibo-cell fibo-concept">FND/…/MonetaryAmount</div></div>
+          <div class="fibo-row"><div class="fibo-cell label">Settlement Currency</div><div class="fibo-cell match"><span class="match-pill">exact</span></div><div class="fibo-cell fibo-concept">FND/…/Currency</div></div>
+          <div class="fibo-row"><div class="fibo-cell label">Counterparty LEI</div><div class="fibo-cell match"><span class="match-pill">exact</span></div><div class="fibo-cell fibo-concept">FBC/…/LegalEntityIdentifier</div></div>
+          <div class="fibo-row"><div class="fibo-cell label">Instrument ISIN</div><div class="fibo-cell match"><span class="match-pill">exact</span></div><div class="fibo-cell fibo-concept">FBC/…/ISIN</div></div>
+          <div class="fibo-row"><div class="fibo-cell label">Market Price</div><div class="fibo-cell match"><span class="match-pill">exact</span></div><div class="fibo-cell fibo-concept">MD/…/MarketPrice</div></div>
+          <div class="fibo-row"><div class="fibo-cell label">Financial Instrument</div><div class="fibo-cell match"><span class="match-pill">exact</span></div><div class="fibo-cell fibo-concept">FBC/…/FinancialInstrument</div></div>
+          <div class="fibo-row"><div class="fibo-cell label">Trade Date</div><div class="fibo-cell match"><span class="match-pill" style="background:rgba(99,102,241,0.12);border-color:rgba(99,102,241,0.3);color:#a5b4fc">close</span></div><div class="fibo-cell fibo-concept">schema:startDate</div></div>
+          <div style="padding:12px 20px;font-size:11px;color:var(--subtle);border-top:1px solid var(--border)">7 of 10 elements mapped · 0 unbound · SKOS match types</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div class="fibo-row">
-            <div class="fibo-cell label">Trade Amount</div>
-            <div class="fibo-cell match"><span class="match-pill">exact</span></div>
-            <div class="fibo-cell fibo-concept">FND/…/MonetaryAmount</div>
-          </div>
-          <div class="fibo-row">
-            <div class="fibo-cell label">Settlement Currency</div>
-            <div class="fibo-cell match"><span class="match-pill">exact</span></div>
-            <div class="fibo-cell fibo-concept">FND/…/Currency</div>
-          </div>
-          <div class="fibo-row">
-            <div class="fibo-cell label">Counterparty LEI</div>
-            <div class="fibo-cell match"><span class="match-pill">exact</span></div>
-            <div class="fibo-cell fibo-concept">FBC/…/LegalEntityIdentifier</div>
-          </div>
-          <div class="fibo-row">
-            <div class="fibo-cell label">Instrument ISIN</div>
-            <div class="fibo-cell match"><span class="match-pill">exact</span></div>
-            <div class="fibo-cell fibo-concept">FBC/…/ISIN</div>
-          </div>
-          <div class="fibo-row">
-            <div class="fibo-cell label">Market Price</div>
-            <div class="fibo-cell match"><span class="match-pill">exact</span></div>
-            <div class="fibo-cell fibo-concept">MD/…/MarketPrice</div>
-          </div>
-          <div class="fibo-row">
-            <div class="fibo-cell label">Financial Instrument</div>
-            <div class="fibo-cell match"><span class="match-pill">exact</span></div>
-            <div class="fibo-cell fibo-concept">FBC/…/FinancialInstrument</div>
-          </div>
-          <div class="fibo-row">
-            <div class="fibo-cell label">Trade Date</div>
-            <div class="fibo-cell match"><span class="match-pill"
-                style="background:rgba(99,102,241,0.12);border-color:rgba(99,102,241,0.3);color:#a5b4fc">close</span>
-            </div>
-            <div class="fibo-cell fibo-concept">schema:startDate</div>
-          </div>
+  <!-- ── Vocabulary & AI ─────────────────────────────────────────── -->
+  <section id="vocabulary" style="background:var(--surface)">
+    <div class="container">
+      <p class="section-label">Vocabulary &amp; AI</p>
+      <h2>Meaning is the missing layer<br />between your data and AI.</h2>
+      <p class="section-sub" style="max-width:620px;margin:0 auto 56px">
+        LLMs can search for tables. They cannot tell you whether <code style="font-family:monospace;font-size:14px;background:rgba(255,255,255,0.06);padding:2px 7px;border-radius:4px">TRADE_AMT</code> is gross or net, in USD or EUR, pre- or post-netting. Standard semantic vocabularies — schema.org and FIBO — close that gap. When every data element carries a machine-readable concept IRI, AI stops guessing and starts reasoning.
+      </p>
 
-          <div style="padding:12px 20px;font-size:11px;color:var(--subtle);border-top:1px solid var(--border)">
-            7 of 10 elements mapped · 0 unbound · SKOS match types
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background:rgba(167,139,250,0.1)">🧩</div>
+          <h3>Ambiguity is the root cause of AI failure</h3>
+          <p>RAG pipelines retrieve chunks of text. Without semantic grounding, a question about "settlement amount" returns every table that mentions the word "amount." SKOS <code>exactMatch</code> bindings to <code>fibo-fnd-acc-cur:MonetaryAmount</code> make retrieval precise — the model finds the right element, not the most popular one.</p>
+          <div class="feature-tags">
+            <span class="tag" style="background:rgba(167,139,250,0.1);color:#c4b5fd">SKOS</span>
+            <span class="tag" style="background:rgba(167,139,250,0.1);color:#c4b5fd">exactMatch</span>
+            <span class="tag" style="background:rgba(167,139,250,0.1);color:#c4b5fd">RAG Precision</span>
           </div>
         </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background:rgba(99,102,241,0.12)">📖</div>
+          <h3>Standard IRIs are native to foundation models</h3>
+          <p>schema.org and FIBO IRIs appear extensively in the training corpora of every major LLM. Annotating a data element with <code>https://schema.org/price</code> or <code>fibo-md-temx-ex:MarketPrice</code> puts it in semantic proximity to everything the model already understands about that concept — zero prompt engineering required.</p>
+          <div class="feature-tags">
+            <span class="tag" style="background:rgba(99,102,241,0.12);color:#a5b4fc">schema.org</span>
+            <span class="tag" style="background:rgba(99,102,241,0.12);color:#a5b4fc">FIBO</span>
+            <span class="tag" style="background:rgba(99,102,241,0.12);color:#a5b4fc">IRI Grounding</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background:rgba(16,185,129,0.1)">🤝</div>
+          <h3>Agents need contracts, not descriptions</h3>
+          <p>As AI moves from answering questions to taking actions — writing pipelines, generating reports, triggering workflows — it needs to know exactly what data it is handling. A vocabulary mapping is a contract: this column contains a <code>LegalEntityIdentifier</code>, not "some kind of ID." Agents that operate on contracts are auditable; agents that operate on descriptions are not.</p>
+          <div class="feature-tags">
+            <span class="tag" style="background:rgba(16,185,129,0.1);color:#6ee7b7">Agentic AI</span>
+            <span class="tag" style="background:rgba(16,185,129,0.1);color:#6ee7b7">Auditability</span>
+            <span class="tag" style="background:rgba(16,185,129,0.1);color:#6ee7b7">LEI · ISIN · CUSIP</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background:rgba(34,211,238,0.1)">🔗</div>
+          <h3>Your metadata becomes a knowledge graph</h3>
+          <p>ODIN's vocabulary mappings, logical models, and lineage edges form a traversable knowledge graph. AI agents don't just search it — they walk it. From a regulatory report, upstream through lineage to source systems, sideways through vocabulary to equivalent concepts in other datasets. That kind of reasoning is only possible when meaning is explicit.</p>
+          <div class="feature-tags">
+            <span class="tag" style="background:rgba(34,211,238,0.1);color:#67e8f9">Knowledge Graph</span>
+            <span class="tag" style="background:rgba(34,211,238,0.1);color:#67e8f9">Apache AGE</span>
+            <span class="tag" style="background:rgba(34,211,238,0.1);color:#67e8f9">Graph Traversal</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background:rgba(245,158,11,0.1)">🏛️</div>
+          <h3>FIBO: regulatory-grade semantics, pre-loaded</h3>
+          <p>The Financial Industry Business Ontology is the only semantic vocabulary built specifically for financial data with regulatory intent. When an AI model encounters a FIBO-annotated dataset, it has access to the same ontological structure that regulators, risk managers, and auditors use to describe the same concepts. No translation layer. No interpretation gap.</p>
+          <div class="feature-tags">
+            <span class="tag" style="background:rgba(245,158,11,0.1);color:#fcd34d">FIBO FND</span>
+            <span class="tag" style="background:rgba(245,158,11,0.1);color:#fcd34d">FIBO FBC</span>
+            <span class="tag" style="background:rgba(245,158,11,0.1);color:#fcd34d">FIBO SEC · MD</span>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="background:rgba(59,130,246,0.1)">📐</div>
+          <h3>Cross-system equivalence without ETL</h3>
+          <p>Different source systems use different column names for the same concept: <code>trade_ccy</code>, <code>SETTL_CURR</code>, <code>SettlementCurrency</code>. All three mapped to <code>fibo-fnd-acc-cur:Currency</code> with <code>exactMatch</code> become interchangeable to any AI agent — without moving a byte of data. Semantic equivalence is free once vocabulary mappings exist.</p>
+          <div class="feature-tags">
+            <span class="tag" style="background:rgba(59,130,246,0.1);color:#93c5fd">Cross-system</span>
+            <span class="tag" style="background:rgba(59,130,246,0.1);color:#93c5fd">Equivalence</span>
+            <span class="tag" style="background:rgba(59,130,246,0.1);color:#93c5fd">Zero-ETL</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:56px;padding:32px 40px;border:1px solid rgba(99,102,241,0.25);border-radius:16px;background:rgba(99,102,241,0.05);max-width:780px;margin-left:auto;margin-right:auto">
+        <p style="font-size:15px;line-height:1.7;color:var(--text);margin:0">
+          <strong style="color:var(--violet)">The bottom line:</strong> every major AI lab is investing in structured data and knowledge graphs because they have discovered the same thing — unstructured text retrieval has a ceiling. The organisations that will get the most from AI in the next decade are the ones who spent the last decade building semantic structure into their data. ODIN gives you that structure today, on top of the data you already have.
+        </p>
       </div>
     </div>
   </section>
@@ -1465,58 +1313,21 @@
 
       <div class="arch-label" style="margin-top:48px">Services</div>
       <div class="arch-grid">
-        <div class="arch-card">
-          <h4 style="color:#a5b4fc">catalog-service</h4>
-          <p>DCAT/DPROD/CSV-W metadata. Logical models. Vocabulary mappings. Kafka event publisher.</p>
-        </div>
-        <div class="arch-card">
-          <h4 style="color:#fcd34d">harvest-service</h4>
-          <p>Spring Batch crawlers for Snowflake, Glue, Teradata, DCAT HTTP. Quartz scheduler.</p>
-        </div>
-        <div class="arch-card">
-          <h4 style="color:#67e8f9">lineage-service</h4>
-          <p>OpenLineage ingestion. DDL parsing via Apache Calcite. Apache AGE Cypher graph queries.</p>
-        </div>
-        <div class="arch-card">
-          <h4 style="color:#6ee7b7">search-service</h4>
-          <p>OpenSearch indexing with FIBO facets. Autocomplete. Full-text + semantic hybrid search.</p>
-        </div>
-        <div class="arch-card">
-          <h4 style="color:#c4b5fd">ai-service</h4>
-          <p>Spring AI RAG pipeline. pgvector embeddings. Ollama (local) or OpenAI. SSE chat streaming.</p>
-        </div>
-        <div class="arch-card">
-          <h4 style="color:#fca5a5">identity-service</h4>
-          <p>Keycloak OAuth2/OIDC integration. ABAC policies. API keys. Multi-tenant isolation.</p>
-        </div>
+        <div class="arch-card"><h4 style="color:#a5b4fc">inventory-service</h4><p>DCAT/DPROD/CSV-W metadata. Logical models. Vocabulary mappings. Kafka event publisher.</p></div>
+        <div class="arch-card"><h4 style="color:#fcd34d">harvest-service</h4><p>Spring Batch crawlers for Snowflake, Glue, Teradata, DCAT HTTP. Quartz scheduler.</p></div>
+        <div class="arch-card"><h4 style="color:#67e8f9">lineage-service</h4><p>OpenLineage ingestion. DDL parsing via Apache Calcite. Apache AGE Cypher graph queries.</p></div>
+        <div class="arch-card"><h4 style="color:#6ee7b7">search-service</h4><p>OpenSearch indexing with FIBO facets. Autocomplete. Full-text + semantic hybrid search.</p></div>
+        <div class="arch-card"><h4 style="color:#c4b5fd">ai-service</h4><p>Spring AI RAG pipeline. pgvector embeddings. Ollama (local) or OpenAI. SSE chat streaming.</p></div>
+        <div class="arch-card"><h4 style="color:#fca5a5">identity-service</h4><p>Keycloak OAuth2/OIDC integration. ABAC policies. API keys. Multi-tenant isolation.</p></div>
       </div>
-
       <div class="arch-label" style="margin-top:40px">Data Stores</div>
       <div class="arch-grid" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr))">
-        <div class="arch-card">
-          <h4>PostgreSQL 16</h4>
-          <p>Metadata, harvest, identity, and AI conversation stores.</p>
-        </div>
-        <div class="arch-card">
-          <h4>Apache AGE</h4>
-          <p>Lineage graph on PostgreSQL. Cypher queries. No separate graph DB.</p>
-        </div>
-        <div class="arch-card">
-          <h4>pgvector</h4>
-          <p>Embedding vectors for RAG. IVFFlat index. 768 dimensions.</p>
-        </div>
-        <div class="arch-card">
-          <h4>OpenSearch 2.x</h4>
-          <p>Full-text and k-NN vector search. FIBO concept facets.</p>
-        </div>
-        <div class="arch-card">
-          <h4>Apache Kafka</h4>
-          <p>Event backbone. KRaft mode. Log-compacted entity topics.</p>
-        </div>
-        <div class="arch-card">
-          <h4>MinIO</h4>
-          <p>Harvest snapshots, DDL files, DCAT exports. S3-compatible.</p>
-        </div>
+        <div class="arch-card"><h4>PostgreSQL 16</h4><p>Metadata, harvest, identity, and AI conversation stores.</p></div>
+        <div class="arch-card"><h4>Apache AGE</h4><p>Lineage graph on PostgreSQL. Cypher queries. No separate graph DB.</p></div>
+        <div class="arch-card"><h4>pgvector</h4><p>Embedding vectors for RAG. IVFFlat index. 768 dimensions.</p></div>
+        <div class="arch-card"><h4>OpenSearch 2.x</h4><p>Full-text and k-NN vector search. FIBO concept facets.</p></div>
+        <div class="arch-card"><h4>Apache Kafka</h4><p>Event backbone. KRaft mode. Log-compacted entity topics.</p></div>
+        <div class="arch-card"><h4>MinIO</h4><p>Harvest snapshots, DDL files, DCAT exports. S3-compatible.</p></div>
       </div>
     </div>
   </section>
@@ -1554,12 +1365,9 @@
           roadmap, and help shape the product before public launch.
         </p>
 
-        <form class="email-form" onsubmit="handleSubmit(event)">
-          <input class="email-input" type="email" placeholder="you@company.com" required id="emailInput" />
-          <button class="email-submit" type="submit">Request Access</button>
-        </form>
-        <p id="formMsg" style="text-align:center;margin-top:12px;font-size:13px;color:var(--emerald);min-height:20px">
-        </p>
+        <div style="text-align:center;margin-top:8px">
+          <a href="mailto:hi@odin-catalog.com" class="cta-btn">Request early access →</a>
+        </div>
 
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:48px">
           <div
@@ -1591,7 +1399,7 @@
         <span class="alpha-pill">Alpha</span>
       </div>
       <div class="footer-right">
-        <a href="https://github.com/odin-catalog">GitHub</a>
+        <a href="https://github.com/odin-catalog/odin">GitHub</a>
         <a href="https://docs.odin-catalog.com/">Docs</a>
         <a href="#features">Features</a>
         <a href="#standards">Standards</a>
@@ -1602,19 +1410,6 @@
   </footer>
 
   <script>
-    function handleSubmit(e) {
-      e.preventDefault();
-      const email = document.getElementById('emailInput').value;
-      const msg = document.getElementById('formMsg');
-      msg.textContent = '✓ You\'re on the list — we\'ll be in touch shortly.';
-      msg.style.color = 'var(--emerald)';
-      document.getElementById('emailInput').value = '';
-      document.getElementById('emailInput').disabled = true;
-      e.target.querySelector('button').disabled = true;
-      e.target.querySelector('button').textContent = 'Submitted';
-      e.target.querySelector('button').style.background = 'var(--subtle)';
-    }
-
     // Smooth reveal on scroll
     const observer = new IntersectionObserver(
       entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
@@ -1630,6 +1425,7 @@
       el.style.transitionDelay = `${(i % 3) * 60}ms`;
     });
   </script>
+
 </body>
 
 </html>
