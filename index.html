@@ -4,9 +4,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>ODIN Catalog — Open Data Intelligence for the Modern Enterprise</title>
   <meta name="description"
-    content="ODIN Catalog is an open-source data catalog built on W3C standards. Semantic lineage, FIBO vocabulary mappings, AI-powered discovery, and data product governance — all in one platform." />
+    content="Open-source data catalog built on W3C standards. Semantic lineage, FIBO vocabulary mappings, AI-powered discovery, and data product governance — all in one platform." />
+  <meta name="author" content="ODIN Catalog" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#060912" />
+
+  <link rel="canonical" href="https://odin-catalog.com/" />
+  <link rel="icon" type="image/png" href="logo-dark.png" />
+  <link rel="apple-touch-icon" href="logo-dark.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ODIN Catalog" />
+  <meta property="og:title" content="ODIN Catalog — Open Data Intelligence for the Modern Enterprise" />
+  <meta property="og:description"
+    content="Open-source data catalog built on W3C standards. Semantic lineage, FIBO vocabulary mappings, AI-powered discovery, and data product governance — all in one platform." />
+  <meta property="og:url" content="https://odin-catalog.com/" />
+  <meta property="og:image" content="https://odin-catalog.com/logo-light.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="ODIN Catalog — Open Data Intelligence" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ODIN Catalog — Open Data Intelligence for the Modern Enterprise" />
+  <meta name="twitter:description"
+    content="Open-source data catalog built on W3C standards. Semantic lineage, FIBO vocabulary mappings, AI-powered discovery, and data product governance." />
+  <meta name="twitter:image" content="https://odin-catalog.com/logo-light.png" />
+  <meta name="twitter:image:alt" content="ODIN Catalog — Open Data Intelligence" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://odin-catalog.com/#organization",
+        "name": "ODIN Catalog",
+        "url": "https://odin-catalog.com/",
+        "logo": "https://odin-catalog.com/logo-light.png",
+        "sameAs": ["https://github.com/odin-catalog/odin"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://odin-catalog.com/#website",
+        "url": "https://odin-catalog.com/",
+        "name": "ODIN Catalog",
+        "description": "Open-source data catalog built on W3C standards",
+        "publisher": { "@id": "https://odin-catalog.com/#organization" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "ODIN Catalog",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any",
+        "description": "Open-source data catalog built on W3C standards. Semantic lineage, FIBO vocabulary mappings, AI-powered discovery, and data product governance.",
+        "url": "https://odin-catalog.com/",
+        "downloadUrl": "https://github.com/odin-catalog/odin",
+        "license": "https://www.apache.org/licenses/LICENSE-2.0",
+        "softwareVersion": "0.1.0-alpha",
+        "author": { "@id": "https://odin-catalog.com/#organization" },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "featureList": [
+          "Semantic vocabulary mappings with FIBO and schema.org",
+          "End-to-end data lineage with OpenLineage and Apache AGE",
+          "Data product governance with DPROD standard",
+          "AI-powered discovery with RAG and pgvector",
+          "Automated metadata harvesting from Snowflake, AWS Glue, Teradata, DCAT HTTP",
+          "Faceted semantic search with OpenSearch and FIBO concept filters"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preload above-the-fold hero image -->
+  <link rel="preload" as="image" href="logo-dark.png" fetchpriority="high" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -546,36 +624,182 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 12px;
     }
-    .lineage-node { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 10px; margin: 6px 0; border: 1px solid; }
-    .lineage-node .node-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-    .lineage-edge { margin-left: 28px; padding: 3px 0; color: var(--subtle); display: flex; align-items: center; gap: 6px; }
-    .lineage-edge::before { content: '↓'; color: var(--indigo-lt); }
-    .depth-1 { margin-left: 0; }
-    .depth-2 { margin-left: 20px; }
-    .depth-3 { margin-left: 40px; }
-    .depth-4 { margin-left: 60px; }
-    .ln-blue { background: rgba(59,130,246,0.08); border-color: rgba(59,130,246,0.25); color: #93c5fd; }
-    .ln-green { background: rgba(16,185,129,0.08); border-color: rgba(16,185,129,0.25); color: #6ee7b7; }
-    .ln-violet { background: rgba(167,139,250,0.08); border-color: rgba(167,139,250,0.25); color: #c4b5fd; }
-    .ln-cyan { background: rgba(34,211,238,0.08); border-color: rgba(34,211,238,0.25); color: #67e8f9; }
-    .ln-amber { background: rgba(245,158,11,0.08); border-color: rgba(245,158,11,0.25); color: #fcd34d; }
 
-    .fibo-panel { background: var(--bg); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
-    .fibo-header { background: rgba(99,102,241,0.08); border-bottom: 1px solid var(--border); padding: 14px 20px; font-size: 12px; font-weight: 600; color: var(--indigo-lt); letter-spacing: 0.5px; }
-    .fibo-row { display: grid; grid-template-columns: 1fr 120px 1fr; gap: 0; border-bottom: 1px solid var(--border); }
-    .fibo-row:last-child { border-bottom: none; }
-    .fibo-cell { padding: 12px 20px; font-size: 12px; display: flex; align-items: center; }
-    .fibo-cell.label { color: var(--muted); font-family: 'JetBrains Mono', monospace; }
-    .fibo-cell.match { justify-content: center; }
-    .match-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; padding: 3px 8px; border-radius: 5px; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); color: #6ee7b7; }
-    .fibo-concept { color: #93c5fd; font-family: 'JetBrains Mono', monospace; font-size: 11px; word-break: break-all; }
+    .lineage-node {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      margin: 6px 0;
+      border: 1px solid;
+    }
+
+    .lineage-node .node-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .lineage-edge {
+      margin-left: 28px;
+      padding: 3px 0;
+      color: var(--subtle);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lineage-edge::before {
+      content: '↓';
+      color: var(--indigo-lt);
+    }
+
+    .depth-1 {
+      margin-left: 0;
+    }
+
+    .depth-2 {
+      margin-left: 20px;
+    }
+
+    .depth-3 {
+      margin-left: 40px;
+    }
+
+    .depth-4 {
+      margin-left: 60px;
+    }
+
+    .ln-blue {
+      background: rgba(59, 130, 246, 0.08);
+      border-color: rgba(59, 130, 246, 0.25);
+      color: #93c5fd;
+    }
+
+    .ln-green {
+      background: rgba(16, 185, 129, 0.08);
+      border-color: rgba(16, 185, 129, 0.25);
+      color: #6ee7b7;
+    }
+
+    .ln-violet {
+      background: rgba(167, 139, 250, 0.08);
+      border-color: rgba(167, 139, 250, 0.25);
+      color: #c4b5fd;
+    }
+
+    .ln-cyan {
+      background: rgba(34, 211, 238, 0.08);
+      border-color: rgba(34, 211, 238, 0.25);
+      color: #67e8f9;
+    }
+
+    .ln-amber {
+      background: rgba(245, 158, 11, 0.08);
+      border-color: rgba(245, 158, 11, 0.25);
+      color: #fcd34d;
+    }
+
+    .fibo-panel {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .fibo-header {
+      background: rgba(99, 102, 241, 0.08);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 20px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--indigo-lt);
+      letter-spacing: 0.5px;
+    }
+
+    .fibo-row {
+      display: grid;
+      grid-template-columns: 1fr 120px 1fr;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .fibo-row:last-child {
+      border-bottom: none;
+    }
+
+    .fibo-cell {
+      padding: 12px 20px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+    }
+
+    .fibo-cell.label {
+      color: var(--muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .fibo-cell.match {
+      justify-content: center;
+    }
+
+    .match-pill {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 5px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #6ee7b7;
+    }
+
+    .fibo-concept {
+      color: #93c5fd;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      word-break: break-all;
+    }
 
     /* ── Architecture ─────────────────────────────────────── */
-    .arch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 48px; }
-    .arch-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; padding: 20px 18px; }
-    .arch-card h4 { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
-    .arch-card p { font-size: 12px; color: var(--muted); line-height: 1.5; }
-    .arch-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--subtle); margin-bottom: 16px; }
+    .arch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 48px;
+    }
+
+    .arch-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 18px;
+    }
+
+    .arch-card h4 {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .arch-card p {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .arch-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--subtle);
+      margin-bottom: 16px;
+    }
 
     /* ── Use case ─────────────────────────────────────────── */
     #usecase {
@@ -676,7 +900,10 @@
     }
 
     @media (max-width: 900px) {
-      .api-layout { grid-template-columns: 1fr; gap: 40px; }
+      .api-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
     }
 
     .api-snippet {
@@ -694,12 +921,14 @@
       align-items: center;
       gap: 8px;
       padding: 10px 16px;
-      background: rgba(255,255,255,0.03);
+      background: rgba(255, 255, 255, 0.03);
       border-bottom: 1px solid var(--border);
     }
 
     .api-dot {
-      width: 10px; height: 10px; border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
     }
 
     .api-snippet-label {
@@ -715,12 +944,29 @@
       white-space: pre;
     }
 
-    .api-kw  { color: #c4b5fd; }
-    .api-url { color: #67e8f9; }
-    .api-key { color: #93c5fd; }
-    .api-str { color: #86efac; }
-    .api-num { color: #fcd34d; }
-    .api-cm  { color: var(--subtle); }
+    .api-kw {
+      color: #c4b5fd;
+    }
+
+    .api-url {
+      color: #67e8f9;
+    }
+
+    .api-key {
+      color: #93c5fd;
+    }
+
+    .api-str {
+      color: #86efac;
+    }
+
+    .api-num {
+      color: #fcd34d;
+    }
+
+    .api-cm {
+      color: var(--subtle);
+    }
 
     .api-builds {
       display: flex;
@@ -787,7 +1033,9 @@
       letter-spacing: 0.5px;
     }
 
-    .api-ep-path { color: var(--muted); }
+    .api-ep-path {
+      color: var(--muted);
+    }
 
     /* ── Testimonial / quote ──────────────────────────────── */
     .quote-section {
@@ -1224,7 +1472,8 @@
         </div>
 
         <div class="lineage-diagram">
-          <div style="font-size:11px;color:var(--subtle);margin-bottom:16px;letter-spacing:0.5px;text-transform:uppercase">
+          <div
+            style="font-size:11px;color:var(--subtle);margin-bottom:16px;letter-spacing:0.5px;text-transform:uppercase">
             Upstream lineage · REGULATORY_DB.BCBS239 · depth 4</div>
           <div class="lineage-node depth-1 ln-amber">
             <div class="node-dot" style="background:#f59e0b"></div>
@@ -1270,7 +1519,8 @@
             <div class="node-dot" style="background:#10b981"></div>
             <span>REFDATA_DB.COUNTERPARTY.MASTER</span>
           </div>
-          <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border);font-size:11px;color:var(--subtle)">
+          <div
+            style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border);font-size:11px;color:var(--subtle)">
             ↑ 10 unique nodes · 8 DERIVED_FROM edges · via Apache AGE Cypher
           </div>
         </div>
@@ -1325,18 +1575,55 @@
         <div class="fibo-panel">
           <div class="fibo-header">FIBO Vocabulary Mappings — Trade Blotter · Logical Model v2.0</div>
           <div class="fibo-row" style="background:rgba(255,255,255,0.02)">
-            <div class="fibo-cell" style="color:var(--subtle);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px">Business Name</div>
-            <div class="fibo-cell match" style="color:var(--subtle);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px">Match</div>
-            <div class="fibo-cell" style="color:var(--subtle);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px">FIBO Concept</div>
+            <div class="fibo-cell"
+              style="color:var(--subtle);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px">
+              Business Name</div>
+            <div class="fibo-cell match"
+              style="color:var(--subtle);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px">
+              Match</div>
+            <div class="fibo-cell"
+              style="color:var(--subtle);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px">
+              FIBO Concept</div>
           </div>
-          <div class="fibo-row"><div class="fibo-cell label">Trade Amount</div><div class="fibo-cell match"><span class="match-pill">exact</span></div><div class="fibo-cell fibo-concept">FND/…/MonetaryAmount</div></div>
-          <div class="fibo-row"><div class="fibo-cell label">Settlement Currency</div><div class="fibo-cell match"><span class="match-pill">exact</span></div><div class="fibo-cell fibo-concept">FND/…/Currency</div></div>
-          <div class="fibo-row"><div class="fibo-cell label">Counterparty LEI</div><div class="fibo-cell match"><span class="match-pill">exact</span></div><div class="fibo-cell fibo-concept">FBC/…/LegalEntityIdentifier</div></div>
-          <div class="fibo-row"><div class="fibo-cell label">Instrument ISIN</div><div class="fibo-cell match"><span class="match-pill">exact</span></div><div class="fibo-cell fibo-concept">FBC/…/ISIN</div></div>
-          <div class="fibo-row"><div class="fibo-cell label">Market Price</div><div class="fibo-cell match"><span class="match-pill">exact</span></div><div class="fibo-cell fibo-concept">MD/…/MarketPrice</div></div>
-          <div class="fibo-row"><div class="fibo-cell label">Financial Instrument</div><div class="fibo-cell match"><span class="match-pill">exact</span></div><div class="fibo-cell fibo-concept">FBC/…/FinancialInstrument</div></div>
-          <div class="fibo-row"><div class="fibo-cell label">Trade Date</div><div class="fibo-cell match"><span class="match-pill" style="background:rgba(99,102,241,0.12);border-color:rgba(99,102,241,0.3);color:#a5b4fc">close</span></div><div class="fibo-cell fibo-concept">schema:startDate</div></div>
-          <div style="padding:12px 20px;font-size:11px;color:var(--subtle);border-top:1px solid var(--border)">7 of 10 elements mapped · 0 unbound · SKOS match types</div>
+          <div class="fibo-row">
+            <div class="fibo-cell label">Trade Amount</div>
+            <div class="fibo-cell match"><span class="match-pill">exact</span></div>
+            <div class="fibo-cell fibo-concept">FND/…/MonetaryAmount</div>
+          </div>
+          <div class="fibo-row">
+            <div class="fibo-cell label">Settlement Currency</div>
+            <div class="fibo-cell match"><span class="match-pill">exact</span></div>
+            <div class="fibo-cell fibo-concept">FND/…/Currency</div>
+          </div>
+          <div class="fibo-row">
+            <div class="fibo-cell label">Counterparty LEI</div>
+            <div class="fibo-cell match"><span class="match-pill">exact</span></div>
+            <div class="fibo-cell fibo-concept">FBC/…/LegalEntityIdentifier</div>
+          </div>
+          <div class="fibo-row">
+            <div class="fibo-cell label">Instrument ISIN</div>
+            <div class="fibo-cell match"><span class="match-pill">exact</span></div>
+            <div class="fibo-cell fibo-concept">FBC/…/ISIN</div>
+          </div>
+          <div class="fibo-row">
+            <div class="fibo-cell label">Market Price</div>
+            <div class="fibo-cell match"><span class="match-pill">exact</span></div>
+            <div class="fibo-cell fibo-concept">MD/…/MarketPrice</div>
+          </div>
+          <div class="fibo-row">
+            <div class="fibo-cell label">Financial Instrument</div>
+            <div class="fibo-cell match"><span class="match-pill">exact</span></div>
+            <div class="fibo-cell fibo-concept">FBC/…/FinancialInstrument</div>
+          </div>
+          <div class="fibo-row">
+            <div class="fibo-cell label">Trade Date</div>
+            <div class="fibo-cell match"><span class="match-pill"
+                style="background:rgba(99,102,241,0.12);border-color:rgba(99,102,241,0.3);color:#a5b4fc">close</span>
+            </div>
+            <div class="fibo-cell fibo-concept">schema:startDate</div>
+          </div>
+          <div style="padding:12px 20px;font-size:11px;color:var(--subtle);border-top:1px solid var(--border)">7 of 10
+            elements mapped · 0 unbound · SKOS match types</div>
         </div>
       </div>
     </div>
@@ -1348,7 +1635,11 @@
       <p class="section-label">Vocabulary &amp; AI</p>
       <h2>Meaning is the missing layer<br />between your data and AI.</h2>
       <p class="section-sub" style="max-width:620px;margin:0 auto 56px">
-        LLMs can search for tables. They cannot tell you whether <code style="font-family:monospace;font-size:14px;background:rgba(255,255,255,0.06);padding:2px 7px;border-radius:4px">TRADE_AMT</code> is gross or net, in USD or EUR, pre- or post-netting. Standard semantic vocabularies — schema.org and FIBO — close that gap. When every data element carries a machine-readable concept IRI, AI stops guessing and starts reasoning.
+        LLMs can search for tables. They cannot tell you whether <code
+          style="font-family:monospace;font-size:14px;background:rgba(255,255,255,0.06);padding:2px 7px;border-radius:4px">TRADE_AMT</code>
+        is gross or net, in USD or EUR, pre- or post-netting. Standard semantic vocabularies — schema.org and FIBO —
+        close that gap. When every data element carries a machine-readable concept IRI, AI stops guessing and starts
+        reasoning.
       </p>
 
       <div class="features-grid">
@@ -1356,7 +1647,11 @@
         <div class="feature-card">
           <div class="feature-icon" style="background:rgba(167,139,250,0.1)">🧩</div>
           <h3>Ambiguity is the root cause of AI failure</h3>
-          <p>RAG pipelines retrieve chunks of text. Without semantic grounding, a question about "settlement amount" returns every table that mentions the word "amount." SKOS <code>exactMatch</code> bindings to <code>fibo-fnd-acc-cur:MonetaryAmount</code> make retrieval precise — the model finds the right element, not the most popular one.</p>
+          <p>RAG pipelines retrieve chunks of text. Without semantic grounding, a question about "settlement amount"
+            returns every table that mentions the word "amount." SKOS <code>exactMatch</code> bindings to
+            <code>fibo-fnd-acc-cur:MonetaryAmount</code> make retrieval precise — the model finds the right element, not
+            the most popular one.
+          </p>
           <div class="feature-tags">
             <span class="tag" style="background:rgba(167,139,250,0.1);color:#c4b5fd">SKOS</span>
             <span class="tag" style="background:rgba(167,139,250,0.1);color:#c4b5fd">exactMatch</span>
@@ -1367,7 +1662,10 @@
         <div class="feature-card">
           <div class="feature-icon" style="background:rgba(99,102,241,0.12)">📖</div>
           <h3>Standard IRIs are native to foundation models</h3>
-          <p>schema.org and FIBO IRIs appear extensively in the training corpora of every major LLM. Annotating a data element with <code>https://schema.org/price</code> or <code>fibo-md-temx-ex:MarketPrice</code> puts it in semantic proximity to everything the model already understands about that concept — zero prompt engineering required.</p>
+          <p>schema.org and FIBO IRIs appear extensively in the training corpora of every major LLM. Annotating a data
+            element with <code>https://schema.org/price</code> or <code>fibo-md-temx-ex:MarketPrice</code> puts it in
+            semantic proximity to everything the model already understands about that concept — zero prompt engineering
+            required.</p>
           <div class="feature-tags">
             <span class="tag" style="background:rgba(99,102,241,0.12);color:#a5b4fc">schema.org</span>
             <span class="tag" style="background:rgba(99,102,241,0.12);color:#a5b4fc">FIBO</span>
@@ -1378,7 +1676,10 @@
         <div class="feature-card">
           <div class="feature-icon" style="background:rgba(16,185,129,0.1)">🤝</div>
           <h3>Agents need contracts, not descriptions</h3>
-          <p>As AI moves from answering questions to taking actions — writing pipelines, generating reports, triggering workflows — it needs to know exactly what data it is handling. A vocabulary mapping is a contract: this column contains a <code>LegalEntityIdentifier</code>, not "some kind of ID." Agents that operate on contracts are auditable; agents that operate on descriptions are not.</p>
+          <p>As AI moves from answering questions to taking actions — writing pipelines, generating reports, triggering
+            workflows — it needs to know exactly what data it is handling. A vocabulary mapping is a contract: this
+            column contains a <code>LegalEntityIdentifier</code>, not "some kind of ID." Agents that operate on
+            contracts are auditable; agents that operate on descriptions are not.</p>
           <div class="feature-tags">
             <span class="tag" style="background:rgba(16,185,129,0.1);color:#6ee7b7">Agentic AI</span>
             <span class="tag" style="background:rgba(16,185,129,0.1);color:#6ee7b7">Auditability</span>
@@ -1389,7 +1690,10 @@
         <div class="feature-card">
           <div class="feature-icon" style="background:rgba(34,211,238,0.1)">🔗</div>
           <h3>Your metadata becomes a knowledge graph</h3>
-          <p>ODIN's vocabulary mappings, logical models, and lineage edges form a traversable knowledge graph. AI agents don't just search it — they walk it. From a regulatory report, upstream through lineage to source systems, sideways through vocabulary to equivalent concepts in other datasets. That kind of reasoning is only possible when meaning is explicit.</p>
+          <p>ODIN's vocabulary mappings, logical models, and lineage edges form a traversable knowledge graph. AI agents
+            don't just search it — they walk it. From a regulatory report, upstream through lineage to source systems,
+            sideways through vocabulary to equivalent concepts in other datasets. That kind of reasoning is only
+            possible when meaning is explicit.</p>
           <div class="feature-tags">
             <span class="tag" style="background:rgba(34,211,238,0.1);color:#67e8f9">Knowledge Graph</span>
             <span class="tag" style="background:rgba(34,211,238,0.1);color:#67e8f9">Apache AGE</span>
@@ -1400,7 +1704,10 @@
         <div class="feature-card">
           <div class="feature-icon" style="background:rgba(245,158,11,0.1)">🏛️</div>
           <h3>FIBO: regulatory-grade semantics, pre-loaded</h3>
-          <p>The Financial Industry Business Ontology is the only semantic vocabulary built specifically for financial data with regulatory intent. When an AI model encounters a FIBO-annotated dataset, it has access to the same ontological structure that regulators, risk managers, and auditors use to describe the same concepts. No translation layer. No interpretation gap.</p>
+          <p>The Financial Industry Business Ontology is the only semantic vocabulary built specifically for financial
+            data with regulatory intent. When an AI model encounters a FIBO-annotated dataset, it has access to the same
+            ontological structure that regulators, risk managers, and auditors use to describe the same concepts. No
+            translation layer. No interpretation gap.</p>
           <div class="feature-tags">
             <span class="tag" style="background:rgba(245,158,11,0.1);color:#fcd34d">FIBO FND</span>
             <span class="tag" style="background:rgba(245,158,11,0.1);color:#fcd34d">FIBO FBC</span>
@@ -1411,7 +1718,11 @@
         <div class="feature-card">
           <div class="feature-icon" style="background:rgba(59,130,246,0.1)">📐</div>
           <h3>Cross-system equivalence without ETL</h3>
-          <p>Different source systems use different column names for the same concept: <code>trade_ccy</code>, <code>SETTL_CURR</code>, <code>SettlementCurrency</code>. All three mapped to <code>fibo-fnd-acc-cur:Currency</code> with <code>exactMatch</code> become interchangeable to any AI agent — without moving a byte of data. Semantic equivalence is free once vocabulary mappings exist.</p>
+          <p>Different source systems use different column names for the same concept: <code>trade_ccy</code>,
+            <code>SETTL_CURR</code>, <code>SettlementCurrency</code>. All three mapped to
+            <code>fibo-fnd-acc-cur:Currency</code> with <code>exactMatch</code> become interchangeable to any AI agent —
+            without moving a byte of data. Semantic equivalence is free once vocabulary mappings exist.
+          </p>
           <div class="feature-tags">
             <span class="tag" style="background:rgba(59,130,246,0.1);color:#93c5fd">Cross-system</span>
             <span class="tag" style="background:rgba(59,130,246,0.1);color:#93c5fd">Equivalence</span>
@@ -1421,9 +1732,14 @@
 
       </div>
 
-      <div style="margin-top:56px;padding:32px 40px;border:1px solid rgba(99,102,241,0.25);border-radius:16px;background:rgba(99,102,241,0.05);max-width:780px;margin-left:auto;margin-right:auto">
+      <div
+        style="margin-top:56px;padding:32px 40px;border:1px solid rgba(99,102,241,0.25);border-radius:16px;background:rgba(99,102,241,0.05);max-width:780px;margin-left:auto;margin-right:auto">
         <p style="font-size:15px;line-height:1.7;color:var(--text);margin:0">
-          <strong style="color:var(--violet)">The bottom line:</strong> every major AI lab is investing in structured data and knowledge graphs because they have discovered the same thing — unstructured text retrieval has a ceiling. The organisations that will get the most from AI in the next decade are the ones who spent the last decade building semantic structure into their data. ODIN gives you that structure today, on top of the data you already have.
+          <strong style="color:var(--violet)">The bottom line:</strong> every major AI lab is investing in structured
+          data and knowledge graphs because they have discovered the same thing — unstructured text retrieval has a
+          ceiling. The organisations that will get the most from AI in the next decade are the ones who spent the last
+          decade building semantic structure into their data. ODIN gives you that structure today, on top of the data
+          you already have.
         </p>
       </div>
     </div>
@@ -1441,21 +1757,57 @@
 
       <div class="arch-label" style="margin-top:48px">Services</div>
       <div class="arch-grid">
-        <div class="arch-card"><h4 style="color:#a5b4fc">inventory-service</h4><p>DCAT/DPROD/CSV-W metadata. Logical models. Vocabulary mappings. Kafka event publisher.</p></div>
-        <div class="arch-card"><h4 style="color:#fcd34d">harvest-service</h4><p>Spring Batch crawlers for Snowflake, Glue, Teradata, DCAT HTTP. Quartz scheduler.</p></div>
-        <div class="arch-card"><h4 style="color:#67e8f9">lineage-service</h4><p>OpenLineage ingestion. DDL parsing via Apache Calcite. Apache AGE Cypher graph queries.</p></div>
-        <div class="arch-card"><h4 style="color:#6ee7b7">search-service</h4><p>OpenSearch indexing with FIBO facets. Autocomplete. Full-text + semantic hybrid search.</p></div>
-        <div class="arch-card"><h4 style="color:#c4b5fd">ai-service</h4><p>Spring AI RAG pipeline. pgvector embeddings. Ollama (local) or OpenAI. SSE chat streaming.</p></div>
-        <div class="arch-card"><h4 style="color:#fca5a5">identity-service</h4><p>Keycloak OAuth2/OIDC integration. ABAC policies. API keys. Multi-tenant isolation.</p></div>
+        <div class="arch-card">
+          <h4 style="color:#a5b4fc">inventory-service</h4>
+          <p>DCAT/DPROD/CSV-W metadata. Logical models. Vocabulary mappings. Kafka event publisher.</p>
+        </div>
+        <div class="arch-card">
+          <h4 style="color:#fcd34d">harvest-service</h4>
+          <p>Spring Batch crawlers for Snowflake, Glue, Teradata, DCAT HTTP. Quartz scheduler.</p>
+        </div>
+        <div class="arch-card">
+          <h4 style="color:#67e8f9">lineage-service</h4>
+          <p>OpenLineage ingestion. DDL parsing via Apache Calcite. Apache AGE Cypher graph queries.</p>
+        </div>
+        <div class="arch-card">
+          <h4 style="color:#6ee7b7">search-service</h4>
+          <p>OpenSearch indexing with FIBO facets. Autocomplete. Full-text + semantic hybrid search.</p>
+        </div>
+        <div class="arch-card">
+          <h4 style="color:#c4b5fd">ai-service</h4>
+          <p>Spring AI RAG pipeline. pgvector embeddings. Ollama (local) or OpenAI. SSE chat streaming.</p>
+        </div>
+        <div class="arch-card">
+          <h4 style="color:#fca5a5">identity-service</h4>
+          <p>Keycloak OAuth2/OIDC integration. ABAC policies. API keys. Multi-tenant isolation.</p>
+        </div>
       </div>
       <div class="arch-label" style="margin-top:40px">Data Stores</div>
       <div class="arch-grid" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr))">
-        <div class="arch-card"><h4>PostgreSQL 16</h4><p>Metadata, harvest, identity, and AI conversation stores.</p></div>
-        <div class="arch-card"><h4>Apache AGE</h4><p>Lineage graph on PostgreSQL. Cypher queries. No separate graph DB.</p></div>
-        <div class="arch-card"><h4>pgvector</h4><p>Embedding vectors for RAG. IVFFlat index. 768 dimensions.</p></div>
-        <div class="arch-card"><h4>OpenSearch 2.x</h4><p>Full-text and k-NN vector search. FIBO concept facets.</p></div>
-        <div class="arch-card"><h4>Apache Kafka</h4><p>Event backbone. KRaft mode. Log-compacted entity topics.</p></div>
-        <div class="arch-card"><h4>MinIO</h4><p>Harvest snapshots, DDL files, DCAT exports. S3-compatible.</p></div>
+        <div class="arch-card">
+          <h4>PostgreSQL 16</h4>
+          <p>Metadata, harvest, identity, and AI conversation stores.</p>
+        </div>
+        <div class="arch-card">
+          <h4>Apache AGE</h4>
+          <p>Lineage graph on PostgreSQL. Cypher queries. No separate graph DB.</p>
+        </div>
+        <div class="arch-card">
+          <h4>pgvector</h4>
+          <p>Embedding vectors for RAG. IVFFlat index. 768 dimensions.</p>
+        </div>
+        <div class="arch-card">
+          <h4>OpenSearch 2.x</h4>
+          <p>Full-text and k-NN vector search. FIBO concept facets.</p>
+        </div>
+        <div class="arch-card">
+          <h4>Apache Kafka</h4>
+          <p>Event backbone. KRaft mode. Log-compacted entity topics.</p>
+        </div>
+        <div class="arch-card">
+          <h4>MinIO</h4>
+          <p>Harvest snapshots, DDL files, DCAT exports. S3-compatible.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1465,7 +1817,8 @@
     <div class="container">
       <p class="section-label">API-First</p>
       <h2>The UI ships as a reference app.<br />Build the experience your users need.</h2>
-      <p class="section-sub">Every capability in ODIN is available over a documented REST API. The bundled producer and consumer interfaces show what's possible — they're a starting point, not a constraint.</p>
+      <p class="section-sub">Every capability in ODIN is available over a documented REST API. The bundled producer and
+        consumer interfaces show what's possible — they're a starting point, not a constraint.</p>
 
       <div class="api-layout">
 
@@ -1479,80 +1832,99 @@
               <span class="api-snippet-label">REST · Bearer or API key</span>
             </div>
             <div class="api-snippet-body"><span class="api-cm"># Find datasets with FIBO MonetaryAmount elements</span>
-<span class="api-kw">GET</span> <span class="api-url">/api/v1/search?q=trade+amount&amp;type=DATASET</span>
-Authorization: Bearer &lt;token&gt;
+              <span class="api-kw">GET</span> <span
+                class="api-url">/api/v1/search?q=trade+amount&amp;type=DATASET</span>
+              Authorization: Bearer &lt;token&gt;
 
-<span class="api-cm"># Response</span>
-{
-  <span class="api-key">"results"</span>: [
-    {
-      <span class="api-key">"id"</span>:    <span class="api-str">"f453e98f-..."</span>,
-      <span class="api-key">"title"</span>: <span class="api-str">"Trade Blotter"</span>,
-      <span class="api-key">"fiboConcepts"</span>: [
-        <span class="api-str">"fibo-fnd-acc-cur:MonetaryAmount"</span>
-      ],
-      <span class="api-key">"hasLineage"</span>:      <span class="api-num">true</span>,
-      <span class="api-key">"hasLogicalModel"</span>: <span class="api-num">true</span>,
-      <span class="api-key">"distributionCount"</span>: <span class="api-num">3</span>
-    }
-  ],
-  <span class="api-key">"totalHits"</span>: <span class="api-num">11</span>
-}
+              <span class="api-cm"># Response</span>
+              {
+              <span class="api-key">"results"</span>: [
+              {
+              <span class="api-key">"id"</span>: <span class="api-str">"f453e98f-..."</span>,
+              <span class="api-key">"title"</span>: <span class="api-str">"Trade Blotter"</span>,
+              <span class="api-key">"fiboConcepts"</span>: [
+              <span class="api-str">"fibo-fnd-acc-cur:MonetaryAmount"</span>
+              ],
+              <span class="api-key">"hasLineage"</span>: <span class="api-num">true</span>,
+              <span class="api-key">"hasLogicalModel"</span>: <span class="api-num">true</span>,
+              <span class="api-key">"distributionCount"</span>: <span class="api-num">3</span>
+              }
+              ],
+              <span class="api-key">"totalHits"</span>: <span class="api-num">11</span>
+              }
 
-<span class="api-cm"># Upstream lineage — 5 hops</span>
-<span class="api-kw">GET</span> <span class="api-url">/api/v1/datasets/prod/trade_blotter/lineage</span>
-    <span class="api-url">?direction=upstream&amp;depth=5</span>
+              <span class="api-cm"># Upstream lineage — 5 hops</span>
+              <span class="api-kw">GET</span> <span class="api-url">/api/v1/datasets/prod/trade_blotter/lineage</span>
+              <span class="api-url">?direction=upstream&amp;depth=5</span>
 
-<span class="api-cm"># AI — stream an answer over SSE</span>
-<span class="api-kw">POST</span> <span class="api-url">/api/v1/conversations/:id/messages</span>
-Accept: text/event-stream
-{ <span class="api-key">"content"</span>: <span class="api-str">"Which datasets feed the P&amp;L report?"</span> }</div>
+              <span class="api-cm"># AI — stream an answer over SSE</span>
+              <span class="api-kw">POST</span> <span class="api-url">/api/v1/conversations/:id/messages</span>
+              Accept: text/event-stream
+              { <span class="api-key">"content"</span>: <span class="api-str">"Which datasets feed the P&amp;L
+                report?"</span> }
+            </div>
           </div>
 
           <div class="api-endpoints" style="margin-top:24px">
-            <div class="api-ep"><span class="api-ep-method" style="color:#6ee7b7">GET</span><span class="api-ep-path">/datasets</span></div>
-            <div class="api-ep"><span class="api-ep-method" style="color:#6ee7b7">GET</span><span class="api-ep-path">/search</span></div>
-            <div class="api-ep"><span class="api-ep-method" style="color:#6ee7b7">GET</span><span class="api-ep-path">/lineage</span></div>
-            <div class="api-ep"><span class="api-ep-method" style="color:#fbbf24">POST</span><span class="api-ep-path">/conversations</span></div>
-            <div class="api-ep"><span class="api-ep-method" style="color:#fbbf24">POST</span><span class="api-ep-path">/lineage</span></div>
-            <div class="api-ep"><span class="api-ep-method" style="color:#6ee7b7">GET</span><span class="api-ep-path">/data-products</span></div>
-            <div class="api-ep"><span class="api-ep-method" style="color:#fbbf24">POST</span><span class="api-ep-path">/sources/:id/trigger</span></div>
-            <div class="api-ep"><span class="api-ep-method" style="color:#6ee7b7">GET</span><span class="api-ep-path">/logical-models</span></div>
-            <div class="api-ep"><span class="api-ep-method" style="color:#6ee7b7">GET</span><span class="api-ep-path">/vocabularies</span></div>
-            <div class="api-ep"><span class="api-ep-method" style="color:#93c5fd">OpenAPI</span><span class="api-ep-path">/swagger-ui.html</span></div>
+            <div class="api-ep"><span class="api-ep-method" style="color:#6ee7b7">GET</span><span
+                class="api-ep-path">/datasets</span></div>
+            <div class="api-ep"><span class="api-ep-method" style="color:#6ee7b7">GET</span><span
+                class="api-ep-path">/search</span></div>
+            <div class="api-ep"><span class="api-ep-method" style="color:#6ee7b7">GET</span><span
+                class="api-ep-path">/lineage</span></div>
+            <div class="api-ep"><span class="api-ep-method" style="color:#fbbf24">POST</span><span
+                class="api-ep-path">/conversations</span></div>
+            <div class="api-ep"><span class="api-ep-method" style="color:#fbbf24">POST</span><span
+                class="api-ep-path">/lineage</span></div>
+            <div class="api-ep"><span class="api-ep-method" style="color:#6ee7b7">GET</span><span
+                class="api-ep-path">/data-products</span></div>
+            <div class="api-ep"><span class="api-ep-method" style="color:#fbbf24">POST</span><span
+                class="api-ep-path">/sources/:id/trigger</span></div>
+            <div class="api-ep"><span class="api-ep-method" style="color:#6ee7b7">GET</span><span
+                class="api-ep-path">/logical-models</span></div>
+            <div class="api-ep"><span class="api-ep-method" style="color:#6ee7b7">GET</span><span
+                class="api-ep-path">/vocabularies</span></div>
+            <div class="api-ep"><span class="api-ep-method" style="color:#93c5fd">OpenAPI</span><span
+                class="api-ep-path">/swagger-ui.html</span></div>
           </div>
         </div>
 
         <!-- Right: what you could build -->
         <div>
-          <p style="font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--subtle);margin-bottom:20px">What teams build on top of ODIN</p>
+          <p
+            style="font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--subtle);margin-bottom:20px">
+            What teams build on top of ODIN</p>
           <div class="api-builds">
             <div class="api-build-card">
               <div class="api-build-icon">🏢</div>
               <div>
                 <h4>Internal data portal</h4>
-                <p>A branded, role-tailored portal that surfaces only the datasets and products relevant to each business unit — finance sees FIBO-annotated instruments, operations sees operational tables.</p>
+                <p>A branded, role-tailored portal that surfaces only the datasets and products relevant to each
+                  business unit — finance sees FIBO-annotated instruments, operations sees operational tables.</p>
               </div>
             </div>
             <div class="api-build-card">
               <div class="api-build-icon">🔌</div>
               <div>
                 <h4>IDE &amp; notebook plugin</h4>
-                <p>Bring lineage and schema context directly into VS Code, JupyterLab, or DataGrip. Hover over a table name to see its logical model, upstream sources, and vocabulary annotations inline.</p>
+                <p>Bring lineage and schema context directly into VS Code, JupyterLab, or DataGrip. Hover over a table
+                  name to see its logical model, upstream sources, and vocabulary annotations inline.</p>
               </div>
             </div>
             <div class="api-build-card">
               <div class="api-build-icon">💬</div>
               <div>
                 <h4>Slack or Teams bot</h4>
-                <p>Let analysts ask "who owns the trade positions dataset?" or "what feeds the risk report?" in the tools they already use. The AI API streams back a grounded, cited answer.</p>
+                <p>Let analysts ask "who owns the trade positions dataset?" or "what feeds the risk report?" in the
+                  tools they already use. The AI API streams back a grounded, cited answer.</p>
               </div>
             </div>
             <div class="api-build-card">
               <div class="api-build-icon">🛒</div>
               <div>
                 <h4>Data product marketplace</h4>
-                <p>A consumer-facing storefront where data products can be browsed, subscribed to, and access-requested — with lifecycle status, SLA, and distribution format surfaced from the API.</p>
+                <p>A consumer-facing storefront where data products can be browsed, subscribed to, and access-requested
+                  — with lifecycle status, SLA, and distribution format surfaced from the API.</p>
               </div>
             </div>
           </div>
